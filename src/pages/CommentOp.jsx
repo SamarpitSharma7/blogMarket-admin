@@ -13,7 +13,7 @@ const CommentOp = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://blogmarket-backend.onrender.com/api/comments/all"
+          "http://localhost:5000/api/comments/all"
         );
         setComments(response.data);
         console.log(response.data);

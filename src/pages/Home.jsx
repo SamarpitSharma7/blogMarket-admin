@@ -10,9 +10,9 @@ const Home = () => {
     const fetchAll = async () => {
       try {
         const [blogRes, cmtRes, userRes] = await Promise.all([
-          axios.get("https://blogmarket-backend.onrender.com/api/admin/blogs"),
-          axios.get("https://blogmarket-backend.onrender.com/api/comments/all"),
-          axios.get("https://blogmarket-backend.onrender.com/api/users"),
+          axios.get("http://localhost:5000/api/admin/blogs"),
+          axios.get("http://localhost:5000/api/comments/all"),
+          axios.get("http://localhost:5000/api/users"),
         ]);
 
         setBlogs(blogRes.data);

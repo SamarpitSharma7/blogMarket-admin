@@ -28,9 +28,7 @@ const UserOp = () => {
 
   const handleDeleteUser = async (userId) => {
     try {
-      await axios.delete(
-        `https://blogmarket-backend.onrender.com/api/users/${userId}`
-      );
+      await axios.delete(`http://localhost:5000/api/users/${userId}`);
       setShowAlert(true);
       setUsers((prevUsers) => prevUsers.filter((user) => user._id !== userId));
       setTimeout(() => {
