@@ -13,7 +13,9 @@ const UserOp = () => {
     // Fetch data using Axios and update the state
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/users");
+        const response = await axios.get(
+          "https://blogmarket-backend.onrender.comapi/users"
+        );
         setUsers(response.data);
         console.log(response.data);
       } catch (error) {
@@ -26,7 +28,9 @@ const UserOp = () => {
 
   const handleDeleteUser = async (userId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/users/${userId}`);
+      await axios.delete(
+        `https://blogmarket-backend.onrender.com/api/users/${userId}`
+      );
       setShowAlert(true);
       setUsers((prevUsers) => prevUsers.filter((user) => user._id !== userId));
       setTimeout(() => {
