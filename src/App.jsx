@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {isLoggedIn && <NavbarComp />}
+        {<NavbarComp />}
         <Routes>
           <Route path="/blogs" element={<BlogOp />} />
           <Route path="/comments" element={<CommentOp />} />
