@@ -31,7 +31,7 @@ const BlogOp = () => {
     try {
       // Delete the blog
       await axios.delete(
-        `https://blogmarket-backend.onrender.com/admin/blogs/${blogId}`
+        `https://blogmarket-backend.onrender.com/api/admin/blogs/${blogId}`
       );
       setShowAlert(true);
 
