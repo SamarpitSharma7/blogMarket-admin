@@ -13,7 +13,7 @@ const CommentOp = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/comments/all"
+          "https://blogmarket-backend.onrender.com/api/comments/all"
         );
         setComments(response.data);
         console.log(response.data);
@@ -27,7 +27,9 @@ const CommentOp = () => {
 
   const handleDeleteComment = async (cmtid) => {
     try {
-      await axios.delete(`http://localhost:5000/api/admin/comments/${cmtid}`);
+      await axios.delete(
+        `https://blogmarket-backend.onrender.com/api/admin/comments/${cmtid}`
+      );
       setShowAlert(true);
       setComments((prevComments) =>
         prevComments.filter((cmt) => cmt._id !== cmtid)

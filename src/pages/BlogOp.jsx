@@ -15,7 +15,7 @@ const BlogOp = () => {
     const fetchBlogs = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/admin/blogs"
+          "https://blogmarket-backend.onrender.com/api/admin/blogs"
         );
 
         setBlogs(response.data);
@@ -30,7 +30,9 @@ const BlogOp = () => {
   const handleDeleteBlog = async (blogId) => {
     try {
       // Delete the blog
-      await axios.delete(`http://localhost:5000/api/admin/blogs/${blogId}`);
+      await axios.delete(
+        `https://blogmarket-backend.onrender.com/admin/blogs/${blogId}`
+      );
       setShowAlert(true);
 
       setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog._id !== blogId));
